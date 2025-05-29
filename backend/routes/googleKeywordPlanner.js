@@ -9,7 +9,24 @@ router.get('/keywords', async (req, res) => {
       params: { query },
       headers: { Authorization: `Bearer ${process.env.GOOGLE_OAUTH_TOKEN}` }
     });
-    res.json({ keywords: response.data.keywords });
+    const keywords = response.data.keywords;
+
+    // Fetch additional size numbers using Google Gemini API
+    const sizeResponses = await Promise.all(
+      keywords.map(keyword => 
+        axios.get('https://googleapis.com/gemini/v1/keyword-size', {
+          params: { keyword },
+          headers: { Authorization: `Bearer ${process.env.GOOGLE_GEMINI_API_KEY}` }
+        })
+      )
+    );
+
+    const keywordsWithSize = keywords.map((keyword, index) => ({
+      keyword,
+      size: sizeResponses[index].data.size
+    }));
+
+    res.json({ keywords: keywordsWithSize });
   } catch (error) {
     console.error('Error with Google Keyword Planner API:', error.message);
     res.status(500).json({ error: 'Failed to fetch keywords from Google' });

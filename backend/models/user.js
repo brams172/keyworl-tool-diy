@@ -5,7 +5,7 @@ const UserSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   role: { type: String, enum: ['user', 'admin'], default: 'user' },
-  ipAddresses: { type: [String], default: [] } // P027f
+  ipAddresses: { type: [String], default: [] }
 });
 
 UserSchema.pre('save', async function (next) {
@@ -20,7 +20,7 @@ UserSchema.methods.matchPassword = async function (enteredPassword) {
 };
 
 UserSchema.methods.isAdmin = function (ipAddress) {
-  return this.role === 'admin' && this.ipAddresses.includes(ipAddress); // Pd4ac
+  return this.role === 'admin' && this.ipAddresses.includes(ipAddress);
 };
 
 module.exports = mongoose.model('User', UserSchema);

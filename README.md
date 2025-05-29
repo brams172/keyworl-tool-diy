@@ -2,13 +2,13 @@
 
 ## Overview
 
-The Keyword Tool DIY is a comprehensive tool designed to help users analyze and optimize their keyword strategies. It provides various functionalities to fetch keyword suggestions, keyword difficulty, keyword trends, and more from different APIs like Google Keyword Planner, Moz, and Deep Seek.
+The Keyword Tool DIY is a comprehensive tool designed to help users analyze and optimize their keyword strategies. It provides various functionalities to fetch keyword suggestions, keyword difficulty, keyword trends, and more from different APIs like Google Keyword Planner, Moz, Deep Seek, Google Gemini, and OpenAI.
 
 ## Features
 
-- **Keyword Suggestions**: Fetch keyword suggestions from Google Keyword Planner, Moz, and Deep Seek.
-- **Keyword Difficulty**: Get keyword difficulty scores from Google Keyword Planner, Moz, and Deep Seek.
-- **Keyword Trends**: Retrieve keyword trends from Google Keyword Planner, Moz, and Deep Seek.
+- **Keyword Suggestions**: Fetch keyword suggestions from Google Keyword Planner, Moz, Deep Seek, Google Gemini, and OpenAI.
+- **Keyword Difficulty**: Get keyword difficulty scores from Google Keyword Planner, Moz, Deep Seek, Google Gemini, and OpenAI.
+- **Keyword Trends**: Retrieve keyword trends from Google Keyword Planner, Moz, Deep Seek, Google Gemini, and OpenAI.
 - **Admin Control**: Admins can add IP addresses for admin control and manage usage and limitations.
 
 ## Admin Control Panel
@@ -70,6 +70,8 @@ To install and run the Keyword Tool DIY, follow these steps:
    MOZ_ACCESS_TOKEN=your_moz_access_token
    GOOGLE_OAUTH_TOKEN=your_google_oauth_token
    DEEP_SEEK_API_KEY=your_deep_seek_api_key
+   GOOGLE_GEMINI_API_KEY=your_google_gemini_api_key
+   OPENAI_API_KEY=your_openai_api_key
    ```
 
 4. Start the backend server:

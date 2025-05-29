@@ -8,7 +8,9 @@ const googleKeywordPlannerRoutes = require('./routes/googleKeywordPlanner');
 const mozRoutes = require('./routes/moz');
 const deepSeekRoutes = require('./routes/deepSeek');
 const authRoutes = require('./routes/auth');
-const adminRoutes = require('./routes/admin'); // Pc030
+const adminRoutes = require('./routes/admin');
+const googleGeminiRoutes = require('./routes/googleGemini');
+const openAIRoutes = require('./routes/openAI');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -26,7 +28,9 @@ app.use('/api/google', googleKeywordPlannerRoutes);
 app.use('/api/moz', mozRoutes);
 app.use('/api/deepseek', deepSeekRoutes);
 app.use('/api/auth', authRoutes);
-app.use('/api/admin', adminRoutes); // Pc030
+app.use('/api/admin', adminRoutes);
+app.use('/api/google-gemini', googleGeminiRoutes);
+app.use('/api/openai', openAIRoutes);
 
 app.get('/', (req, res) => {
   res.send('Keyword Tool Backend is Running');
