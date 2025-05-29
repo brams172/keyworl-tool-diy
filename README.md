@@ -37,11 +37,18 @@ The tool is approximately 90% functional. The core features such as fetching key
 
 ## Chrome Extension Usage
 
-Currently, the tool is not available as a Chrome extension. However, with some modifications, it can be converted into a Chrome extension. The main steps to achieve this would include:
+The tool can be used as a Chrome extension. Follow these steps to set it up:
 
-1. Creating a manifest file for the Chrome extension.
-2. Modifying the frontend code to work within the Chrome extension environment.
-3. Packaging the extension and uploading it to the Chrome Web Store.
+1. Create a `manifest.json` file in the root of your frontend directory. This file will define the metadata and permissions required for your Chrome extension.
+2. Include the necessary permissions such as `activeTab`, `storage`, and any other permissions your extension might need.
+3. Define the background script, content scripts, and popup HTML file in the manifest.
+4. Modify the frontend code to work within the Chrome extension environment.
+5. Create a popup HTML file that will serve as the user interface for your extension.
+6. Update the React components to render within the popup HTML file.
+7. Ensure that the API calls are made to the backend server from the Chrome extension.
+8. Package the extension by zipping the frontend directory, including the `manifest.json` file, popup HTML file, and all necessary assets.
+9. Upload the packaged extension to the Chrome Web Store for distribution.
+10. Follow the Chrome Web Store guidelines for publishing and managing your extension.
 
 ## Integration of Open Sources and Google Trends
 
