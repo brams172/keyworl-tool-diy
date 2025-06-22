@@ -8,6 +8,7 @@ const express = require('express');
     const mozRoutes = require('./routes/moz');
     const deepSeekRoutes = require('./routes/deepSeek');
     const authRoutes = require('./routes/auth');
+    const chatRoutes = require('./routes/chat');
 
     const app = express();
     const PORT = process.env.PORT || 5000;
@@ -25,6 +26,7 @@ const express = require('express');
     app.use('/api/moz', mozRoutes);
     app.use('/api/deepseek', deepSeekRoutes);
     app.use('/api/auth', authRoutes);
+    app.use('/api/chat', chatRoutes);
 
     app.get('/', (req, res) => {
       res.send('Keyword Tool Backend is Running');
